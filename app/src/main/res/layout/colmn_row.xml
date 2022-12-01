@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- <TextView
+         android:id="@+id/TextID"
+         android:layout_width="0dp"
+         android:layout_weight="1"
+         android:layout_height="wrap_content"
+         android:text="ID"/> -->
+
+    <TextView
+        android:id="@+id/TextTitle"
+        android:layout_width="716dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="472dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:autoSizeMaxTextSize="28sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/proxima_thin"
+        android:gravity="top|left"
+        android:text="Title"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TextEndTime"
+        android:layout_width="110dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/proxima_thin"
+        android:gravity="bottom|center"
+        android:text="EndTime"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewTimeSeparator"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TextStartTime"
+        android:layout_width="110dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/proxima_thin"
+        android:gravity="bottom|center"
+        android:text="Start Time"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TextOrganizer"
+        android:layout_width="363dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="64dp"
+        android:layout_weight="1"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="bottom|left"
+        android:text="Organizer"
+        android:fontFamily="@font/proxima_thin"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTimeSeparator"
+        android:layout_width="21dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/proxima_thin"
+        android:gravity="center_vertical"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+        app:layout_constraintStart_toEndOf="@+id/TextStartTime"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewSeparator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="136dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kropeczki" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
