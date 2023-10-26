@@ -18,7 +18,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.ScaleAnimation;
@@ -270,7 +273,20 @@ public class CalendarView extends AppCompatActivity {
                     deleteFastMeetingBtn.setVisibility(View.VISIBLE);
                 });
 
-                Thread.sleep(15000);
+                Thread.sleep(13000);
+                CalendarView.this.runOnUiThread(() -> {
+
+                    Animation fadeOut = new AlphaAnimation(1, 0);
+                    fadeOut.setInterpolator(new AccelerateInterpolator()); //and this
+                    fadeOut.setDuration(1000);
+
+                    AnimationSet animation = new AnimationSet(false); //change to false
+                    animation.addAnimation(fadeOut);
+                    deleteFastMeetingBtn.setAnimation(animation);
+                    animation.start();
+                });
+
+                Thread.sleep(1000);
                 CalendarView.this.runOnUiThread(() -> {
                     fastMeetingBoolAfterTime = FALSE;
                     deleteFastMeetingBtn.setVisibility(View.INVISIBLE);
@@ -527,17 +543,14 @@ public class CalendarView extends AppCompatActivity {
             }
         };
 
-
-
         Thread btnThead = new Thread(updListener);
         btnThead.start();
-
     }
 
      void glide(){
         Glide.with(CalendarView.this)
                 .asGif()
-                .load(R.drawable.fade_out) //Your gif resource
+                .load(R.drawable.cancel_btn) //Your gif resource
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
                 .skipMemoryCache(true)
                 .listener(new RequestListener<GifDrawable>() {
